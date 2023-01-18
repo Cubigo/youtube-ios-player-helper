@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name              = "youtube-ios-player-helper"
-  s.version           = "1.0.4"
-  s.summary           = "Helper library for iOS developers that want to embed YouTube videos in
+  s.name              = "cubigo-youtube-ios-player-helper"
+  s.version           = "1.0.5"
+  s.summary           = "Cubigo fork - Helper library for iOS developers that want to embed YouTube videos in
                          their iOS apps with the iframe player API."
 
   s.description       = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
                          your Objective-C code
                        DESC
 
-  s.homepage           = "https://developers.google.com/youtube/v3/guides/ios_youtube_helper"
+  s.homepage           = "https://github.com/Cubigo/youtube-ios-player-helper"
   s.license            = {
                             :type => 'Apache',
                             :text => <<-LICENSE
@@ -37,11 +37,9 @@ Pod::Spec.new do |s|
                               limitations under the License.
                             LICENSE
                          }
-  s.author             = { "Ikai Lan" => "",
-                           "Ibrahim Ulukaya" => "",
-                           "Yoshifumi Yamaguchi" => "" }
-  s.social_media_url   = "https://twitter.com/YouTubeDev"
-  s.source             = { :git => "https://github.com/youtube/youtube-ios-player-helper.git", :tag => "1.0.4" }
+  s.author             = { "Cubigo" => "" }
+  s.social_media_url   = ""
+  s.source             = { :git => "https://github.com/Cubigo/youtube-ios-player-helper.git", :tag => "1.0.5" }
 
   s.platform     = :ios, '10.0'
   s.requires_arc = true
