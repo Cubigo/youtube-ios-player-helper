@@ -80,10 +80,14 @@ NSString static *const kYTPlayerSyndicationRegexPattern = @"^https://tpc.googles
 }
 
 - (BOOL)loadWithVideoId:(NSString *)videoId playerVars:(NSDictionary *)playerVars {
-  if (!playerVars) {
-    playerVars = @{};
+  // Mutable copy because we may have been passed an immutable config dictionary.
+  NSMutableDictionary *tempPlayerVars = [[NSMutableDictionary alloc] init];
+  [tempPlayerVars setValue:@NO forKey:@"fs"];
+  [tempPlayerVars setValue:@YES forKey:@"modestbranding"];
+  if (playerVars) {
+      [tempPlayerVars addEntriesFromDictionary:playerVars];
   }
-  NSDictionary *playerParams = @{ @"videoId" : videoId, @"playerVars" : playerVars };
+  NSDictionary *playerParams = @{ @"videoId" : videoId, @"playerVars" : tempPlayerVars };
   return [self loadWithPlayerParams:playerParams];
 }
 
@@ -905,7 +909,7 @@ createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration
 
 - (WKWebView *)createNewWebView {
   WKWebViewConfiguration *webViewConfiguration = [[WKWebViewConfiguration alloc] init];
-  webViewConfiguration.allowsInlineMediaPlayback = YES;
+  webViewConfiguration.allowsInlineMediaPlayback = NO;
   webViewConfiguration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
   WKWebView *webView = [[WKWebView alloc] initWithFrame:self.bounds
                                           configuration:webViewConfiguration];
