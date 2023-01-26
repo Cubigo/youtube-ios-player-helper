@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = "cubigo-youtube-ios-player-helper"
-  s.version           = "1.0.7"
+  s.version           = "1.0.8"
   s.summary           = "Cubigo fork - Helper library for iOS developers that want to embed YouTube videos in
                          their iOS apps with the iframe player API."
 
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
                          }
   s.author             = { "Cubigo" => "" }
   s.social_media_url   = ""
-  s.source             = { :git => "https://github.com/Cubigo/youtube-ios-player-helper.git", :tag => "1.0.5" }
+  s.source             = { :git => "https://github.com/Cubigo/youtube-ios-player-helper.git", :tag => "1.0.8" }
 
   s.platform     = :ios, '10.0'
   s.requires_arc = true
